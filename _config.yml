@@ -1,5 +1,5 @@
 title: Arthur Rapp
-description: Write-ups of things I build and test.
+description: Building and securing AI systems. Writing about AI security, infra, and what I learn along the way.
 markdown: kramdown
 kramdown:
   input: GFM
