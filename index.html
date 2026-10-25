@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<p class="tagline">{{ site.description }}</p>
+
+<ul class="posts">
+{% for post in site.posts %}
+  <li>
+    <span class="date">{{ post.date | date: "%b %-d, %Y" }}</span>
+    <a href="{{ post.external_url | default: post.url | relative_url }}">{{ post.title }}</a>
+    {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+  </li>
+{% endfor %}
+</ul>

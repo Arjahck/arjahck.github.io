@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="author" content="Arthur Rapp">
+  <style>
+    :root { --text: #1a1a1a; --muted: #6b6b6b; --line: #e5e5e5; --link: #1f5fbf; --code: #f4f4f4; }
+    * { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0; background: #ffffff; color: var(--text);
+      font: 18px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    }
+    header.site, main, footer { max-width: 720px; margin: 0 auto; padding-left: 20px; padding-right: 20px; }
+    header.site { padding-top: 28px; padding-bottom: 12px; border-bottom: 1px solid var(--line); }
+    header.site a { color: var(--text); font-weight: 700; font-size: 1.05rem; text-decoration: none; }
+    main { padding-top: 40px; padding-bottom: 32px; }
+    h1 { font-size: 2.1rem; line-height: 1.25; margin: 0 0 12px; letter-spacing: -0.01em; }
+    h1 + p { color: var(--muted); font-size: 0.95rem; margin-top: 0; }
+    h2 { font-size: 1.45rem; line-height: 1.3; margin: 2.4em 0 0.6em; }
+    p, ul, ol { margin: 0 0 1.1em; }
+    li { margin: 0.3em 0; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    img { display: block; max-width: 100%; height: auto; margin: 1.6em auto 0.6em; }
+    code { font: 0.88em ui-monospace, SFMono-Regular, Menlo, monospace; background: var(--code); padding: 0.1em 0.3em; border-radius: 4px; }
+    table { display: block; overflow-x: auto; border-collapse: collapse; margin: 1.4em 0; font-size: 0.9rem; line-height: 1.45; }
+    th, td { border-bottom: 1px solid var(--line); padding: 8px 12px; text-align: left; vertical-align: top; }
+    th { border-bottom: 2px solid var(--text); font-weight: 600; }
+    .tagline { color: var(--muted); margin-bottom: 2.4em; }
+    ul.posts { list-style: none; padding: 0; margin: 0; }
+    ul.posts li { margin: 0 0 1.8em; }
+    ul.posts .date { display: block; color: var(--muted); font-size: 0.88rem; }
+    ul.posts a { font-size: 1.2rem; font-weight: 600; line-height: 1.35; }
+    ul.posts p { margin: 0.3em 0 0; color: var(--muted); font-size: 0.95rem; }
+    footer { padding-top: 24px; padding-bottom: 56px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header class="site"><a href="{{ '/' | relative_url }}">{{ site.title }}</a></header>
+  <main>
+{{ content }}
+  </main>
+  <footer>
+    <a href="https://github.com/Arjahck">GitHub</a>
+  </footer>
+</body>
+</html>

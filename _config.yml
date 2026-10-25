@@ -1,0 +1,9 @@
+title: Arthur Rapp
+description: Write-ups of things I build and test.
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+permalink: /:year/:month/:day/:title/
+exclude:
+  - README.md
