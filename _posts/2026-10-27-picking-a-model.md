@@ -203,11 +203,11 @@ The models in these tables will be replaced within months, the method carries ov
 
 ## Annex
 
-- Mistral, regional inference (EU endpoint): https://docs.mistral.ai/inference/regional-inference
-- Artificial Analysis, Intelligence Index, an example of a public leaderboard: https://artificialanalysis.ai
-- Anthropic, effort and adaptive thinking: https://platform.claude.com/docs
-- Clopper-Pearson interval, for the 28% bound on nine calls: https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval
-- Zheng et al., Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena (2023), on a model as a judge and its biases: https://arxiv.org/abs/2306.05685
+- [Mistral, regional inference (EU endpoint)](https://docs.mistral.ai/inference/regional-inference)
+- [Artificial Analysis, Intelligence Index, an example of a public leaderboard](https://artificialanalysis.ai)
+- [Anthropic, effort and adaptive thinking](https://platform.claude.com/docs)
+- [Clopper-Pearson interval, for the 28% bound on nine calls](https://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval)
+- [Zheng et al., Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena (2023), on a model as a judge and its biases](https://arxiv.org/abs/2306.05685)
 
 Prices used for the cost estimates, in USD per million tokens, October 2026. Every input token is counted at the uncached price, reasoning tokens as output. Prompt caching on the fixed input would lower these costs, by a different amount per provider. Calls that hung and were retried are not in the record, so the real cost of the GLM-5.3 runs is higher.
 
