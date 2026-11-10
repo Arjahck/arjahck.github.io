@@ -166,6 +166,7 @@ Question m03 shows how they behave. Before the rerank, OnionDuke is on rank 1 (p
 | Keywords | 63 | 0.90 | 0.94 |
 | Reword | 12 | 0.75 | 1.00 |
 | Paraphrase | 13 | 0.69 | 0.92 |
+{: .center}
 
 
 **Reranker.** precision@1 / MRR for every question set (n = answerable questions) and for multiple rerankers.
