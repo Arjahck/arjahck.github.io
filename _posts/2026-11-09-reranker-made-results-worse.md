@@ -36,7 +36,7 @@ flowchart LR
 2. **Rerank** moves the most relevant candidate to the front (see below).
 3. **Top-1.** Find returns only the first result: its file and page.
 
-<pre class="mermaid">
+<pre class="mermaid center">
 flowchart TD
   Q["question"] --> E["embed (bge-m3)"]
   E --> R["retrieve the 30 nearest chunks (cosine)"]
@@ -175,6 +175,7 @@ Question m03 shows how they behave. Before the rerank, OnionDuke is on rank 1 (p
 | Golden | 92 | 0.78 / 0.84 | 0.62 / 0.78 | **0.89 / 0.93** | 0.87 / 0.91 |
 | English derivatives | 151 | 0.64 / 0.73 | 0.64 / 0.75 | **0.79 / 0.84** | 0.78 / 0.84 |
 | German | 63 | 0.68 / 0.79 | 0.63 / 0.77 | **0.87 / 0.91** | 0.86 / 0.90 |
+{: .center}
 
 With Mistral Small, the reranker makes the result worse: precision@1 on the golden questions drops from 0.78 to 0.62. Over all 306 answerable questions it fixed 41 top-1 results and broke 60. With Haiku 5.5 (same prompt and configuration) it fixed 59 and broke 15. The cross-encoder fixed 61 and broke 21, and ends within 0.02 (one or two questions) of Haiku on every question set. 
 
@@ -233,6 +234,7 @@ Every run has a report with more data than this post shows. The "retrieved" rank
 | Golden | [report](/assets/reranker-made-results-worse/reports/20261107-130230-mitre-base/summary/) | [report](/assets/reranker-made-results-worse/reports/20261108-095518-mitre-base-haiku-rerank/summary/) | [report](/assets/reranker-made-results-worse/reports/20261109-230937-mitre-base-ce-rerank/summary/) |
 | English derivatives | [report](/assets/reranker-made-results-worse/reports/20261107-160648-mitre-derivatives/summary/) | [report](/assets/reranker-made-results-worse/reports/20261108-095934-mitre-derivatives-haiku-rerank/summary/) | [report](/assets/reranker-made-results-worse/reports/20261110-092916-mitre-derivatives-ce-rerank/summary/) |
 | German | [report](/assets/reranker-made-results-worse/reports/20261107-173114-mitre-de/summary/) | [report](/assets/reranker-made-results-worse/reports/20261108-100115-mitre-de-haiku-rerank/summary/) | [report](/assets/reranker-made-results-worse/reports/20261110-154421-mitre-de-ce-rerank/summary/) |
+{: .center}
 
 Datasets and scripts:
 
