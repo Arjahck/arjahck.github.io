@@ -81,7 +81,7 @@ The following runs have been executed:
 | Reranker, second run | claude-haiku-5-5 | Anthropic API |
 | Reranker, third run | bge-reranker-v2-m3 | TEI in Docker, locally (CPU) |
 
-Condense settings are the same for all runs (see Appendix).
+Condense settings are the same for all runs (see [Appendix](#appendix)).
 
 ## Data
 
