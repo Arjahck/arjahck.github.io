@@ -11,7 +11,7 @@ This post shows how I set up a self-built RAG, [Condense](https://github.com/Aet
 
 ## System
 
-Condense is a self-hosted search engine for a folder of documents. It is a RAG (retrieval-augmented generation) system: it first retrieves the passages that match a question, then lets a language model write from them. Condense works in two phases. A first phase, ingest, runs once per corpus and turns every file into searchable chunks. A second phase, "Find", runs for every question and returns a single result: the best-matching file and page.
+Condense is a self-hosted search engine for a folder of documents. It's a RAG (retrieval-augmented generation) system: it first retrieves the passages that match a question, then lets a language model write from them. Condense works in two phases. A first phase, ingest, runs once per corpus and turns every file into searchable chunks. A second phase, "Find", runs for every question and returns a single result: the best-matching file and page.
 
 **Ingest.** The ingest pipeline starts by parsing each file to text. It then cuts the text into chunks. A chunk is a window of 512 tokens that overlaps the previous window by 64 tokens, so a sentence on a border ends up in both. The tokens are counted with the tokenizer of [bge-m3](https://huggingface.co/BAAI/bge-m3), the same model that embeds them. bge-m3 is a multilingual embedding model: it turns a text into a vector of 1,024 numbers. Finally, each vector is stored with its text, file path and page in a [libSQL](https://github.com/tursodatabase/libsql) file. 
 
