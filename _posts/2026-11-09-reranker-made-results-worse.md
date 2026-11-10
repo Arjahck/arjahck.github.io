@@ -230,9 +230,9 @@ Every run has a report with more data than this post shows. The "retrieved" rank
 
 | Question set | Mistral Small | Haiku 5.5 | bge-reranker-v2-m3 |
 |---|---|---|---|
-| Golden | [report](/assets/reranker-made-results-worse/reports/20261107-130230-mitre-base/summary.html) | [report](/assets/reranker-made-results-worse/reports/20261108-095518-mitre-base-haiku-rerank/summary.html) | [report](/assets/reranker-made-results-worse/reports/20261109-230937-mitre-base-ce-rerank/summary.html) |
-| English derivatives | [report](/assets/reranker-made-results-worse/reports/20261107-160648-mitre-derivatives/summary.html) | [report](/assets/reranker-made-results-worse/reports/20261108-095934-mitre-derivatives-haiku-rerank/summary.html) | [report](/assets/reranker-made-results-worse/reports/20261110-092916-mitre-derivatives-ce-rerank/summary.html) |
-| German | [report](/assets/reranker-made-results-worse/reports/20261107-173114-mitre-de/summary.html) | [report](/assets/reranker-made-results-worse/reports/20261108-100115-mitre-de-haiku-rerank/summary.html) | [report](/assets/reranker-made-results-worse/reports/20261110-154421-mitre-de-ce-rerank/summary.html) |
+| Golden | [report](/assets/reranker-made-results-worse/reports/20261107-130230-mitre-base/summary/) | [report](/assets/reranker-made-results-worse/reports/20261108-095518-mitre-base-haiku-rerank/summary/) | [report](/assets/reranker-made-results-worse/reports/20261109-230937-mitre-base-ce-rerank/summary/) |
+| English derivatives | [report](/assets/reranker-made-results-worse/reports/20261107-160648-mitre-derivatives/summary/) | [report](/assets/reranker-made-results-worse/reports/20261108-095934-mitre-derivatives-haiku-rerank/summary/) | [report](/assets/reranker-made-results-worse/reports/20261110-092916-mitre-derivatives-ce-rerank/summary/) |
+| German | [report](/assets/reranker-made-results-worse/reports/20261107-173114-mitre-de/summary/) | [report](/assets/reranker-made-results-worse/reports/20261108-100115-mitre-de-haiku-rerank/summary/) | [report](/assets/reranker-made-results-worse/reports/20261110-154421-mitre-de-ce-rerank/summary/) |
 
 Datasets and scripts:
 
