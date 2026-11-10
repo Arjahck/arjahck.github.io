@@ -1,4 +1,4 @@
-# MITRE ATT&CK 20.1 silver set. Schema: condense src/sift/eval/golden.py. Paths are relative to corpus/ (suffix-matched).
+# MITRE ATT&CK 20.1 silver set. Schema: golden.py in the Condense evaluation harness. Paths are relative to corpus/ (suffix-matched).
 # Bases (tag `base`): mitre-NN (original), -eNN easy, -mNN medium, -hNN hard, -vhNN very hard, -nNN edge cases, -uNN unanswerable.
 # Variants `<base>.<kind>` (tag `variant` + kind: keywords, scenario, de, paraphrase, reword) share the base's gold and reference.
 # References hold only what the question asks; context a grader may want is in notes. `.de` references are German.

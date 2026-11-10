@@ -1,8 +1,8 @@
 ---
 layout: default
-title: sift-eval — mitre-base-haiku-rerank
+title: "condense-eval: mitre-base-haiku-rerank"
 ---
-# sift-eval — mitre-base-haiku-rerank
+# condense-eval: mitre-base-haiku-rerank
 
 2026-11-08 09:55:18 UTC · 112 questions · git `574fc23` · judge: skipped
 
@@ -67,12 +67,12 @@ title: sift-eval — mitre-base-haiku-rerank
 | near-duplicate | 4 | 0.750 |
 | negative-answer | 2 | 1.000 |
 | nested-id | 1 | 1.000 |
-| nonexistent | 1 | — |
+| nonexistent | 1 | n/a |
 | number | 14 | 0.875 |
 | open-ended | 1 | 1.000 |
 | original | 13 | 0.923 |
-| out-of-scope | 1 | — |
-| people | 1 | — |
+| out-of-scope | 1 | n/a |
+| people | 1 | n/a |
 | procedure | 3 | 0.667 |
 | punctuation | 1 | 1.000 |
 | real-incident | 10 | 1.000 |
@@ -86,8 +86,8 @@ title: sift-eval — mitre-base-haiku-rerank
 | tactic | 9 | 0.875 |
 | technique | 21 | 0.950 |
 | temporal | 3 | 1.000 |
-| unanswerable | 20 | — |
+| unanswerable | 20 | n/a |
 | version-sensitive | 2 | 1.000 |
 | very-hard | 8 | 0.875 |
-| vulnerability | 1 | — |
+| vulnerability | 1 | n/a |
 | yes-no | 5 | 0.600 |

@@ -44,7 +44,7 @@ flowchart TD
   R --> V["version collapse"]
   V --> RR["rerank (LLM picks 1 of the first 12)"]
   RR --> T["top-1 result: file and page"]
-  R -.->|"ranking 1: retrieved"| M["sift-eval"]
+  R -.->|"ranking 1: retrieved"| M["condense-eval"]
   RR -.->|"ranking 2: final"| M
 </pre>
 
@@ -145,7 +145,7 @@ During the implementation of the evaluation, I ran into a lot of variables that 
 
 The complete reports for every run are linked in the [Appendix](#appendix).
 
-**Where measurements are taken.** The evaluation harness, "sift-eval", runs every question through the same pipeline code as the product and records the ranking at two points. The "retrieved" ranking is the raw embedding order, before collapse and rerank. The "final" ranking is what Find returns. The reranker's effect is the difference between the two, so one run gives me both the result with the reranker and the baseline without it.
+**Where measurements are taken.** The evaluation harness, "condense-eval", runs every question through the same pipeline code as the product and records the ranking at two points. The "retrieved" ranking is the raw embedding order, before collapse and rerank. The "final" ranking is what Find returns. The reranker's effect is the difference between the two, so one run gives me both the result with the reranker and the baseline without it.
 
 ## Evaluation
 
@@ -214,7 +214,7 @@ RERANK_STRATEGY=llm (first and second run), crossencoder (third run)
 
 **Resources:**
 
-- [Condense](https://github.com/AetherisAI/condense): the RAG system used in this post, including the evaluation harness "sift-eval"
+- [Condense](https://github.com/AetherisAI/condense): the RAG system used in this post, including the evaluation harness "condense-eval"
 - [MITRE ATT&CK](https://attack.mitre.org): the knowledge base used as test data (version 20.1)
 - [attack-stix-data](https://github.com/mitre-attack/attack-stix-data): MITRE's STIX JSON, the source of the Markdown corpus
 - [markitdown](https://github.com/microsoft/markitdown): converts files to Markdown during ingest

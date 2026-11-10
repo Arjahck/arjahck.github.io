@@ -1,8 +1,8 @@
 ---
 layout: default
-title: sift-eval — mitre-de-haiku-rerank
+title: "condense-eval: mitre-de-haiku-rerank"
 ---
-# sift-eval — mitre-de-haiku-rerank
+# condense-eval: mitre-de-haiku-rerank
 
 2026-11-08 10:01:15 UTC · 65 questions · git `574fc23` · judge: skipped
 
@@ -76,7 +76,7 @@ title: sift-eval — mitre-de-haiku-rerank
 | tactic | 9 | 0.750 |
 | technique | 16 | 1.000 |
 | temporal | 1 | 1.000 |
-| unanswerable | 2 | — |
+| unanswerable | 2 | n/a |
 | variant | 65 | 0.873 |
 | version-sensitive | 2 | 1.000 |
 | yes-no | 1 | 1.000 |

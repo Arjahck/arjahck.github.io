@@ -1,12 +1,12 @@
 ---
 layout: default
-title: sift-eval — mitre-de
+title: "condense-eval: mitre-de"
 ---
-# sift-eval — mitre-de
+# condense-eval: mitre-de
 
 2026-11-07 17:31:14 UTC · 65 questions · git `5e39daa` · judge: ragas 0.4.3 · mistral-small-latest
 
-> ⚠️ The judge model (mistral-small-latest) is also the generator — models tend to grade their own answers generously. Set EVAL_JUDGE_MODEL to a different, stronger model.
+> ⚠️ The judge model (mistral-small-latest) is also the generator. Models tend to grade their own answers generously. Set EVAL_JUDGE_MODEL to a different, stronger model.
 
 ## Find (65 questions, 0 errors)
 
@@ -98,7 +98,7 @@ title: sift-eval — mitre-de
 | negative-answer | 1 | 0.146 | 0.000 | 0.895 | 0.933 | 0.000 | 1.000 | 0.073 | 0.250 | 0.000 | 0.897 | 0.500 | 0.000 | 1.000 | 0.000 |
 | nested-id | 1 | 0.101 | 0.000 | 0.944 | 0.533 | 0.000 | 1.000 | 0.000 | 0.094 | 0.000 | 0.728 | 1.000 | 1.000 | 0.333 | 0.000 |
 | number | 4 | 0.793 | 0.875 | 0.878 | 0.948 | 0.500 | 1.000 | 0.100 | 0.816 | 0.792 | 0.888 | 0.750 | 0.750 | 1.000 | 0.214 |
-| open-ended | 1 | 0.333 | 1.000 | 0.596 | 1.000 | 1.000 | 1.000 | — | 0.799 | 0.800 | 0.900 | 1.000 | 1.000 | 1.000 | 0.632 |
+| open-ended | 1 | 0.333 | 1.000 | 0.596 | 1.000 | 1.000 | 1.000 | n/a | 0.799 | 0.800 | 0.900 | 1.000 | 1.000 | 1.000 | 0.632 |
 | procedure | 2 | 0.795 | 0.833 | 0.955 | 0.667 | 1.000 | 1.000 | 0.125 | 0.761 | 0.833 | 0.910 | 0.750 | 0.500 | 1.000 | 0.125 |
 | punctuation | 1 | 0.613 | 1.000 | 0.962 | 0.950 | 1.000 | 1.000 | 0.500 | 0.859 | 1.000 | 0.962 | 1.000 | 1.000 | 1.000 | 0.200 |
 | real-incident | 1 | 0.939 | 0.500 | 0.909 | 1.000 | 1.000 | 1.000 | 0.000 | 0.931 | 0.500 | 0.974 | 0.000 | 1.000 | 1.000 | 0.000 |
@@ -112,7 +112,7 @@ title: sift-eval — mitre-de
 | tactic | 9 | 0.446 | 0.375 | 0.756 | 0.517 | 0.375 | 0.821 | 0.156 | 0.460 | 0.292 | 0.814 | 0.958 | 0.625 | 0.893 | 0.062 |
 | technique | 16 | 0.668 | 0.806 | 0.861 | 0.850 | 0.812 | 0.948 | 0.189 | 0.811 | 0.844 | 0.814 | 0.943 | 0.750 | 0.956 | 0.344 |
 | temporal | 1 | 0.537 | 1.000 | 0.957 | 0.804 | 1.000 | 1.000 | 0.000 | 0.538 | 1.000 | 0.804 | 0.833 | 1.000 | 1.000 | 0.000 |
-| unanswerable | 2 | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| unanswerable | 2 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
 | variant | 65 | 0.667 | 0.739 | 0.823 | 0.735 | 0.667 | 0.937 | 0.219 | 0.691 | 0.715 | 0.776 | 0.837 | 0.635 | 0.922 | 0.238 |
 | version-sensitive | 2 | 0.120 | 0.000 | 0.456 | 0.000 | 0.000 | 0.500 | 0.000 | 0.607 | 0.500 | 0.841 | 1.000 | 1.000 | 1.000 | 0.250 |
 | yes-no | 1 | 0.990 | 1.000 | 0.757 | 1.000 | 1.000 | 1.000 | 0.000 | 0.981 | 1.000 | 0.389 | 0.500 | 0.000 | 1.000 | 0.000 |

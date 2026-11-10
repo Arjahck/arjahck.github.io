@@ -1,8 +1,8 @@
 ---
 layout: default
-title: sift-eval — mitre-de-ce-rerank
+title: "condense-eval: mitre-de-ce-rerank"
 ---
-# sift-eval — mitre-de-ce-rerank
+# condense-eval: mitre-de-ce-rerank
 
 2026-11-10 15:44:21 UTC · 65 questions · git `43183be` · judge: skipped
 
@@ -76,7 +76,7 @@ title: sift-eval — mitre-de-ce-rerank
 | tactic | 9 | 0.875 |
 | technique | 16 | 0.812 |
 | temporal | 1 | 0.000 |
-| unanswerable | 2 | — |
+| unanswerable | 2 | n/a |
 | variant | 65 | 0.857 |
 | version-sensitive | 2 | 1.000 |
 | yes-no | 1 | 1.000 |

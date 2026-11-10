@@ -1,8 +1,8 @@
 ---
 layout: default
-title: sift-eval — mitre-derivatives-ce-rerank
+title: "condense-eval: mitre-derivatives-ce-rerank"
 ---
-# sift-eval — mitre-derivatives-ce-rerank
+# condense-eval: mitre-derivatives-ce-rerank
 
 2026-11-10 09:29:16 UTC · 155 questions · git `43183be` · judge: skipped
 
@@ -79,7 +79,7 @@ title: sift-eval — mitre-derivatives-ce-rerank
 | tactic | 23 | 0.810 |
 | technique | 41 | 0.707 |
 | temporal | 2 | 0.000 |
-| unanswerable | 4 | — |
+| unanswerable | 4 | n/a |
 | variant | 142 | 0.790 |
 | version-sensitive | 5 | 1.000 |
 | yes-no | 3 | 1.000 |

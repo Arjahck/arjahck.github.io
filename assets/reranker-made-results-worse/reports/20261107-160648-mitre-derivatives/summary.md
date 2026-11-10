@@ -1,12 +1,12 @@
 ---
 layout: default
-title: sift-eval — mitre-derivatives
+title: "condense-eval: mitre-derivatives"
 ---
-# sift-eval — mitre-derivatives
+# condense-eval: mitre-derivatives
 
 2026-11-07 16:06:48 UTC · 155 questions · git `5e39daa` · judge: ragas 0.4.3 · mistral-small-latest
 
-> ⚠️ The judge model (mistral-small-latest) is also the generator — models tend to grade their own answers generously. Set EVAL_JUDGE_MODEL to a different, stronger model.
+> ⚠️ The judge model (mistral-small-latest) is also the generator. Models tend to grade their own answers generously. Set EVAL_JUDGE_MODEL to a different, stronger model.
 
 ## Find (155 questions, 0 errors)
 
@@ -115,7 +115,7 @@ title: sift-eval — mitre-derivatives
 | tactic | 23 | 0.574 | 0.429 | 0.739 | 0.612 | 0.429 | 0.760 | 0.240 | 0.634 | 0.468 | 0.700 | 0.952 | 0.762 | 0.806 | 0.335 |
 | technique | 41 | 0.527 | 0.665 | 0.761 | 0.812 | 0.707 | 0.844 | 0.393 | 0.634 | 0.730 | 0.699 | 0.931 | 0.732 | 0.936 | 0.275 |
 | temporal | 2 | 0.688 | 1.000 | 0.908 | 0.885 | 1.000 | 1.000 | 0.000 | 0.694 | 1.000 | 0.740 | 0.292 | 1.000 | 1.000 | 0.000 |
-| unanswerable | 4 | — | — | — | — | — | — | — | — | — | — | — | — | — | — |
+| unanswerable | 4 | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a | n/a |
 | variant | 142 | 0.580 | 0.663 | 0.739 | 0.747 | 0.638 | 0.870 | 0.326 | 0.590 | 0.633 | 0.717 | 0.852 | 0.630 | 0.879 | 0.263 |
 | version-sensitive | 5 | 0.349 | 0.000 | 0.772 | 0.417 | 0.200 | 0.600 | 0.267 | 0.802 | 0.400 | 0.790 | 0.967 | 1.000 | 0.900 | 0.333 |
 | yes-no | 3 | 0.710 | 0.833 | 0.599 | 0.863 | 1.000 | 1.000 | 0.400 | 0.631 | 0.500 | 0.689 | 0.833 | 0.000 | 1.000 | 0.111 |

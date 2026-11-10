@@ -1,8 +1,8 @@
 ---
 layout: default
-title: sift-eval — mitre-base-ce-rerank
+title: "condense-eval: mitre-base-ce-rerank"
 ---
-# sift-eval — mitre-base-ce-rerank
+# condense-eval: mitre-base-ce-rerank
 
 2026-11-09 23:09:37 UTC · 112 questions · git `fd7e73a` · judge: skipped
 
@@ -67,12 +67,12 @@ title: sift-eval — mitre-base-ce-rerank
 | near-duplicate | 4 | 0.750 |
 | negative-answer | 2 | 0.500 |
 | nested-id | 1 | 0.000 |
-| nonexistent | 1 | — |
+| nonexistent | 1 | n/a |
 | number | 14 | 1.000 |
 | open-ended | 1 | 1.000 |
 | original | 13 | 1.000 |
-| out-of-scope | 1 | — |
-| people | 1 | — |
+| out-of-scope | 1 | n/a |
+| people | 1 | n/a |
 | procedure | 3 | 1.000 |
 | punctuation | 1 | 1.000 |
 | real-incident | 10 | 1.000 |
@@ -86,8 +86,8 @@ title: sift-eval — mitre-base-ce-rerank
 | tactic | 9 | 1.000 |
 | technique | 21 | 0.850 |
 | temporal | 3 | 0.667 |
-| unanswerable | 20 | — |
+| unanswerable | 20 | n/a |
 | version-sensitive | 2 | 1.000 |
 | very-hard | 8 | 0.875 |
-| vulnerability | 1 | — |
+| vulnerability | 1 | n/a |
 | yes-no | 5 | 1.000 |

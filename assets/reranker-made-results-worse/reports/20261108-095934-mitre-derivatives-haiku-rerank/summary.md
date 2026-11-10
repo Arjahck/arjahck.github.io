@@ -1,8 +1,8 @@
 ---
 layout: default
-title: sift-eval — mitre-derivatives-haiku-rerank
+title: "condense-eval: mitre-derivatives-haiku-rerank"
 ---
-# sift-eval — mitre-derivatives-haiku-rerank
+# condense-eval: mitre-derivatives-haiku-rerank
 
 2026-11-08 09:59:34 UTC · 155 questions · git `574fc23` · judge: skipped
 
@@ -79,7 +79,7 @@ title: sift-eval — mitre-derivatives-haiku-rerank
 | tactic | 23 | 0.857 |
 | technique | 41 | 0.829 |
 | temporal | 2 | 1.000 |
-| unanswerable | 4 | — |
+| unanswerable | 4 | n/a |
 | variant | 142 | 0.804 |
 | version-sensitive | 5 | 1.000 |
 | yes-no | 3 | 1.000 |
