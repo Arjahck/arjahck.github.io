@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using RAGAS to understand where embedding search breaks, and what no reranker can fix
+title: Using RAGAS to understand where embedding search breaks
 date: 2026-11-18
 description: 'I scored 306 answers from my RAG with the three RAGAS metrics and two LLM judges. None of the metrics checks if an answer is right, and answer relevance does not move when retrieval misses the right file.'
 ---
