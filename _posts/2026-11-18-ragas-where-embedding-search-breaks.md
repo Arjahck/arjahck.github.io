@@ -1,8 +1,8 @@
 ---
 layout: post
-title: Using RAGAS to understand where embedding search breaks
+title: Using RAGAS to understand and measure RAG and understand what RAGAS metrics can't see
 date: 2026-11-18
-description: 'I scored 306 answers from my RAG with the three RAGAS metrics and two LLM judges. None of the metrics checks if an answer is right, and answer relevance does not move when retrieval misses the right file.'
+description: 'I scored 306 answers from my RAG with RAGAS and two LLM judges. One answer named the wrong malware and still scored 0.56 on answer correctness, the only metric that compares it with the reference answer.'
 ---
 
 When a model answers with information from a RAG (retrieval-augmented generation) system, there's a risk that its answers are hallucinated. It's therefore critical to actively measure such a setup by analyzing its answers for things like relevance, context and, most importantly, quality.
@@ -86,7 +86,7 @@ The answer is only half right:
 
 The two classifications are right, but the malware is wrong. According to passage 1, UPSTYLE doesn't even use Twitter (it "parses encoded commands from error logs"), and the recap itself admits that the years aren't in the passages.
 
-Now that we have the answer for the question vh01 we use the "condense-eval" AI-as-a-judge to measure the result. For this we use the following prompt structure: an instruction, a JSON schema for the output, one or more worked examples and finally the input (question, answer and/or passages). 
+Now that we have the answer for the question vh01 we use the "condense-eval" AI-as-a-judge to measure the result. For this we use the following prompt structure: an instruction, a JSON schema for the output, one or more worked examples and finally the input (question, answer, passages and/or reference answer). 
 
 I only show the instruction below. The judge is Mistral Small 4.
 
@@ -167,6 +167,18 @@ Formula: `CU = Σ (precision@k · v_k) / Σ v_k`, v_k the verdict for the passag
 
 The judge checks if a passage was useful for the answer that was given, not for the right answer. Passage 2 holds exactly what is needed to rule out CozyCar ("used by APT29 from 2010 to 2015"), but the wrong answer doesn't use it, so it counts as not useful. Worse, the judge even calls the wrong answer correct in its reason for passage 1.
 
+### Answer Correctness
+
+Answer correctness is the only metric in this post that compares the answer with the reference answer. An LLM sorts the statements of both into true positives (TP), false positives (FP) and false negatives (FN). The F1 score is then combined with the cosine similarity of the two texts.
+
+Formula: `AC = 0.75 · F1 + 0.25 · sim(a, r)`, with `F1 = |TP| / (|TP| + 0.5 · (|FP| + |FN|))`, a the answer, r the reference answer.
+
+> **Reference answer:** OnionDuke (S0052). ATT&CK classes its Twitter backup C2 as T1102.003 Web Service: One-Way Communication, while CozyCar's Twitter backup channel is T1102.002 Web Service: Bidirectional Communication.
+
+**Measurement:** 3 TP, 3 FP and 3 FN give F1 = 0.50. With a similarity of 0.74: AC = 0.75 · 0.50 + 0.25 · 0.74 = 0.56.
+
+The main error, UPSTYLE instead of OnionDuke, counts as a true positive twice: the judge reads it as "OnionDuke (likely a reference to UPSTYLE)". Even with the reference answer, the judge misses the one fact that matters.
+
 ### Two judges
 
 The same answer, scored by both judges (recorded runs). The Mistral values differ from the walkthrough above, which comes from re-scoring the same answer: the judge isn't deterministic (see Limitations).
@@ -176,11 +188,12 @@ The same answer, scored by both judges (recorded runs). The Mistral values diffe
 | Faithfulness | 0.43 | 0.38 |
 | Answer relevance | 0.66 | 0.69 |
 | Context utilization | 0.83 | 0.00 |
+| Answer correctness | 0.56 | 0.58 |
 {: .center}
 
 The two judges agree that the answer is mostly not grounded in the passages. However, they disagree completely on the passages. Haiku rates none of the three as useful.
 
-In the end, none of the three metrics checks if the answer is right. 
+In the end, the wrong malware costs the answer little: answer correctness, the only metric that checks the answer against the reference, still gives it 0.56 and 0.58.
 
 ## Evaluation
 
@@ -226,7 +239,7 @@ The following tables sum up the runs. The answers are the same in both tables, o
 ## What I learned
 
 - RAGAS allows to turn subjective checks of RAG outputs into more objective, repeatable metrics. Allowing to diagnose whether poor answers come from bad document retrieval or model hallucination (or both in my case).
-- RAGAS is an automated and scalable way to measure the quality of answers. However, its three metrics never compare the answer with a reference answer, so a wrong answer can still score well (vh01).
+- RAGAS is an automated and scalable way to measure the quality of answers. However, its three core metrics never compare the answer with a reference answer, so a wrong answer can still score well (vh01). Answer correctness does compare, but the judge still counted the wrong malware as correct.
 - Using the same LLM to write and to judge the answers risks a generous judge (my guess: Mistral Small 4 scored its own answers higher).
 - Swapping the judge changes the results. Runs can only be compared under the same judge.
 - Answer relevance can't see a retrieval failure.
@@ -234,7 +247,6 @@ The following tables sum up the runs. The answers are the same in both tables, o
 
 ## Limitations
 
-- **Reference-free metrics only:** I only used the three reference-free RAGAS metrics. RAGAS also has metrics that compare the answer with a reference answer (e.g. answer correctness), but I left them out of this post.
 - **Judge bias:** LLM judges tend to favor longer, more detailed answers. In faithfulness, extra true statements also dilute an error (vh01).
 - **One judge run:** The judge isn't deterministic: re-scoring vh01 changed its faithfulness from 0.43 to 0.57.
 - **Public data:** MITRE ATT&CK is very likely part of the training data of both judges.
@@ -251,7 +263,7 @@ The following tables sum up the runs. The answers are the same in both tables, o
 
 **Reports and data:**
 
-Every run has a report with more data than this post shows, including the reference-based metrics (answer correctness, answer recall) left out here. Both judges scored the same answers.
+Every run has a report with more data than this post shows, including metrics left out here (e.g. answer recall). Both judges scored the same answers.
 
 | Question set | Judge: Mistral Small 4 | Judge: Claude Haiku 5.5 |
 |---|---|---|
