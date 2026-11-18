@@ -56,7 +56,7 @@ In my case, the same answers were judged twice: once by Mistral Small 4 and once
 ## Data
 
 MITRE ATT&CK (version 20.1) has been chosen as test data because of its complexity, depth and security topic.
-The dataset is made out of 332 questions with 112 question/answer (reference) pairs of various difficulties (easy to very hard, plus edge cases) and for those 220 derivatives (keywords, scenario, paraphrase, reword and German) and 20 unanswarble.
+The dataset is made out of 332 questions: 112 question/answer (reference) pairs of various difficulties (easy to very hard, plus edge cases) and 220 derivatives of them (keywords, scenario, paraphrase, reword and German). 26 of them are unanswerable, which leaves 306 answerable questions.
 
 How the dataset was created is described in the [Data section](https://arjahck.github.io/2026/11/09/reranker-made-results-worse/#data) of my previous post.
 
@@ -146,7 +146,7 @@ Answer relevance measures how close the generated questions are to the original 
 
 ### Context Utilization
 
-condense-eval doesn't compute context relevance as described in the paper but context utilization (newer stronger metric): for every passage, the judge decides if it was useful for the answer. A useful passage on a high rank counts more than one further down.
+condense-eval doesn't compute context relevance as described in the paper but context utilization: for every passage, the judge decides if it was useful for the answer. A useful passage on a high rank counts more than one further down.
 
 Formula: `CU = Σ (precision@k · v_k) / Σ v_k`, v_k the verdict for the passage at rank k (0 or 1), precision@k the share of useful passages in the first k.
 
@@ -169,7 +169,7 @@ The judge checks if a passage was useful for the answer that was given, not for 
 
 ### Two judges
 
-The same answer, scored by both judges (recorded runs):
+The same answer, scored by both judges (recorded runs). The Mistral values differ from the walkthrough above, which comes from re-scoring the same answer: the judge isn't deterministic (see Limitations).
 
 | Metric | Mistral Small 4 | Claude Haiku 5.5 |
 |---|---|---|
@@ -227,10 +227,9 @@ The following tables sum up the runs. The answers are the same in both tables, o
 
 - RAGAS allows to turn subjective checks of RAG outputs into more objective, repeatable metrics. Allowing to diagnose whether poor answers come from bad document retrieval or model hallucination (or both in my case).
 - RAGAS is an automated and scalable way to measure the quality of answers. However, its three metrics never compare the answer with a reference answer, so a wrong answer can still score well (vh01).
-- Using the same LLM to write and to judge the answers risks a generous judge (Mistral Small 4 scored its own answers higher).
+- Using the same LLM to write and to judge the answers risks a generous judge (my guess: Mistral Small 4 scored its own answers higher).
 - Swapping the judge changes the results. Runs can only be compared under the same judge.
 - Answer relevance can't see a retrieval failure.
-- Most of the fix is in the retrieval. If the right file isn't among the candidates, no reranker can bring it back.
 
 
 ## Limitations
