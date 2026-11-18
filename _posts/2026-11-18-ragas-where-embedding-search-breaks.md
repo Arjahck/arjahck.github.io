@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Using RAGAS to understand and measure RAG and understand what RAGAS metrics can't see
+title: Using RAGAS to measure RAG and understand what RAGAS metrics can't see
 date: 2026-11-18
 description: 'I scored 306 answers from my RAG with RAGAS and two LLM judges. One answer named the wrong malware and still scored 0.56 on answer correctness, the only metric that compares it with the reference answer.'
 ---
